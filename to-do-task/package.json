@@ -1,0 +1,63 @@
+{
+  "name": "to-do-task",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.0.0",
+    "@material-ui/icons": "^4.0.0",
+    "async-retry": "^1.2.3",
+    "axios": "^0.18.0",
+    "axios-retry": "^3.1.2",
+    "classnames": "^2.2.6",
+    "foundation-sites": "^6.5.3",
+    "history": "^4.9.0",
+    "js-cookie": "^2.2.0",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-foundation": "^0.9.6",
+    "react-redux": "^7.0.3",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "3.0.1",
+    "react-spinners": "^0.5.4",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-form": "^8.2.1",
+    "redux-thunk": "^2.3.0",
+    "retry-axios": "^1.0.1"
+  },
+  "proxy": "http://localhost:9000",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env"
+    ],
+    "plugins": [
+      "emotion"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
