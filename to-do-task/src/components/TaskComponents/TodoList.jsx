@@ -13,28 +13,24 @@ class TodoList extends React.Component {
             todosData: this.props.todosData,
             editing: null,
             newTodo: '',
-
         };
     }
 
     renderList() {
-        if (this.props.shouldFetch !== 'OK') {
+        if (this.props.todosData === undefined) {
             this.props.handleFetch();
-
+            console.log(this.props.todosData);
             return (
                 <div className='sweet-loading'>
                     <ClipLoader
                         sizeUnit={"px"}
                         size={150}
                         color={'#123abc'}
-                        loading={this.props.shouldFetch !== 'OK'}
+                        loading={this.props.todosData === undefined}
                     />
                 </div>
             )
         }
-        /*
-                let todosData = this.props.todosData;
-        */
         let all = this.props.todosData;
         let active = _.filter(this.props.todosData, ['isCompleted', false]);
         let completed = _.filter(this.props.todosData, ['isCompleted', true]);

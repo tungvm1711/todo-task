@@ -17,7 +17,13 @@ const mapStateToProps = state => {
         todos: state.todos
     }
 };
-
+function getSafe(fn, defaultVal) {
+    try {
+        return fn();
+    } catch (e) {
+        return defaultVal;
+    }
+}
 class TodoPage extends React.Component {
     constructor(props) {
         super(props);
@@ -25,6 +31,9 @@ class TodoPage extends React.Component {
             loading: true,
             fetchTodoSuccess: false,
             todos: [],
+/*
+            todos: this.props.todos.todos.todos,
+*/
             active: false,
             completed: false
         }
@@ -49,33 +58,63 @@ class TodoPage extends React.Component {
         let todos = this.props.todos.todos;
         console.log(this.props.todos);
 
-        if (todos.status === 'OK') {
+        if (todos.todos !== undefined) {
             console.log("load duoc roi ne");
             this.setState({todos: todos.todos});
         }
     };
 
+/*    static getDerivedStateFromProps(nextProps, prevState) {
+        getSafe(() => nextProps.todos.todos.todos, []);
+        console.log(nextProps.todos.todos.todos);
+        console.log(prevState.todos);
+        if (nextProps !== prevState) {
+            return console.log("ahdasdahsdaisdh");
 
-    handleCreateTask = (text, urgency, isCompleted) => {
-        let newTodo = {
-            "text": "Think of something new to do",
-            "isCompleted": false,
-            "urgency": 5
+        } else return null;
+    }*/
+
+        componentWillReceiveProps = (nextProps) => {
+
+            /*
+                    if (this.state.todos !== undefined && nextProps.todos.todos.todos !== undefined && nextProps.todos.todos.todos !== this.state.todos ) {
+            */
+            try {
+                if (nextProps.todos.todos.todos === 'undefined') {
+                    console.log("dietmememem");
+                }
+            } catch (err) {
+                console.log(err)
+            }
+
+            if (typeof (nextProps.todos.todos.todos) !== 'undefined') {
+                if (this.state.todos !== nextProps.todos.todos.todos) {
+
+                    console.log(nextProps.todos.todos.todos);
+                    console.log(this.state.todos);
+                    this.setState({todos: nextProps.todos.todos.todos});
+                    console.log("dietmememem");
+                }
+            }
         };
-        console.log(newTodo);
+
+    handleCreateTask = (text, urgency, complete) => {
+        let isCompleted = (complete === 'True');
+        let newTodo = {
+            "text": text,
+            "isCompleted": isCompleted,
+            "urgency": parseInt(urgency)
+        };
         this.props.create(newTodo);
         this.props.fetch();
-
     };
 
     handleFetchTask = (e) => {
         this.props.fetch();
         let todos = this.props.todos.todos;
         console.log(this.props.todos);
-
-        if (todos.status === 'OK') {
+        if (todos.todos !== undefined) {
             console.log("load duoc roi ne");
-
             this.setState({todos: todos.todos});
         }
     };
@@ -84,16 +123,12 @@ class TodoPage extends React.Component {
         console.log("Remove Task");
         this.props.removeTask(_id);
         this.props.fetch();
-        let todos = this.props.todos.todos;
-
-        if (todos.status === 'OK') {
-            this.setState({todos: todos.todos});
-        }
     };
 
     render() {
-        let todosData = this.props.todos.todos.todos;
-        let status = this.props.todos.todos.status;
+        let todosData = this.state.todos;
+        let status = this.state.status;
+        console.log(this.props);
 
         return (
             <div className="g-row todopage">
@@ -138,6 +173,7 @@ class TodoPage extends React.Component {
             </div>
         );
     }
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoPage);

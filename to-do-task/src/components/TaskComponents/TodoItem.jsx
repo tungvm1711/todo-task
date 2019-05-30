@@ -38,6 +38,8 @@ class TodoItem extends React.Component {
 
     render() {
         const {removeTask} = this.props;
+        console.log(this.props);
+
         let URGENCY = {
             1 : 'primary',
             2: 'secondary',

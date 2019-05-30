@@ -1,7 +1,7 @@
 import {CREATE_TASK_SUCCESS, FETCH_TODOS_SUCCESS} from "../actions/todotask";
 
-const _nullTodos = {todos: {}, filterType: 'completed'};
-export default (state = _nullTodos, {type, todos, filterType}) => {
+const _nullTodos = {todos: {}};
+export default (state = _nullTodos, {type, todos}) => {
     switch (type) {
         case FETCH_TODOS_SUCCESS:
             return {

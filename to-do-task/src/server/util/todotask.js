@@ -24,11 +24,7 @@ export const createTodo = (todo) => {
             'Content-Type': 'application/json',
             'sessionId': sessionId
         },
-        data: {
-            "text": "Think of something new to do",
-            "isCompleted": false,
-            "urgency": 5
-        }
+        data: todo
     });
 };
 

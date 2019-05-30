@@ -25,10 +25,10 @@ export const createSuccess = (todo) => {
     };
 };
 
-export const removeSuccess = (_id) => {
+export const removeSuccess = (todo) => {
     return {
         type: REMOVE_TASK_SUCCESS,
-        _id
+        todo
     };
 };
 
