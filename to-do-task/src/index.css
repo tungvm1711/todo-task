@@ -18,7 +18,23 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.button-toggle.active {
+    background: #f34d93 !important;
+}
+.buttonAddGroup .button, .order-btnGroup .button {
+    margin-right: 15px !important;
+}
+.button.button-toggle {
+    position: relative;
+    display: inline-block;
+    border: 0;
+    border-radius: 6px;
+    border-bottom: 3px solid rgba(0,0,0,.3);
+    font-size: 13px;
+    outline: none;
+    text-decoration: none;
+    margin-right: 15px;
+}
 button {
     margin: 0;
     padding: 0;
@@ -34,7 +50,9 @@ button {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+input.task-item__input {
+    margin: 0;
+}
 .btnGroup-wrapper {
     color: #777;
     padding: 10px 15px;
@@ -84,9 +102,6 @@ button {
     font-weight: 300;
 }
 
-.todoapp {
-
-}
 
 :focus {
     outline: 0;
@@ -95,10 +110,36 @@ button {
 .hidden {
     display: none;
 }
+.add-btn{
+    background-color: transparent !important;
+}
+.hide {
+    display: none!important;
+}
+.edit-btn-group {
+    position: absolute;
+    display: inline-flex;
+    text-align: right;
+    right: 0;
+    height: 100%;
+}
 
+.button.btn--icon {
+    border-radius: 40px;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    margin: auto 5px;
+}
+.add-form {
+    text-align: right;
+}
+.add-form div{
+    text-align: left;
+}
 .todoapp {
     background: #fff;
-    margin: 130px 0 40px 0;
+    margin: 0 0 40px 0;
     position: relative;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
     0 25px 50px 0 rgba(0, 0, 0, 0.1);

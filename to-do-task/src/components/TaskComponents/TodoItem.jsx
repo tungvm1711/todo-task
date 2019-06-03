@@ -1,53 +1,117 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Badge, Colors } from 'react-foundation';
+import {Badge, Button} from 'react-foundation';
+import Edit from '@material-ui/icons/Edit';
+import Close from '@material-ui/icons/Close';
+import Done from '@material-ui/icons/Done';
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
 
 class TodoItem extends React.Component {
-
     constructor(props) {
         super(props);
 
-        this.state = {editText: this.props.text};
+        this.state = {editing: false, urgency: this.props.urgency, text: this.props.text};
     }
-
-    handleEdit = event => {
-        /*
-                this.props.onEdit();
-        */
-        this.setState({editText: this.props.text});
-    };
-
     handleRemove = event => {
         this.props.removeTask(this.props.id);
     };
 
-    handleChange = event => {
-        if (this.props.editing) {
-            this.setState({editText: event.target.value});
+    toggleStatus = () => {
+        const {id, text, urgency, isCompleted} = this.props;
+        this.props.updateTask(id, text, urgency, !isCompleted);
+    };
+    handleEdit = () => {
+        this.setState({editing: true});
+    };
+
+    handleKeyUp = (event) => {
+        if (event.keyCode === 13) {
+            this.handleSave(event);
+        } else if (event.keyCode === 27) {
+            this.stopEditing();
         }
     };
-    handleSubmit = event => {
-        /*        let val = this.state.editText.trim();
-                if (val) {
-                    this.props.onSave(val);
-                    this.setState({editText: val});
-                } else {
-                    this.props.onDestroy();
-                }*/
+
+
+    handleSave = (event) => {
+        if (this.state.editing) {
+            const {id, text, urgency, isCompleted} = this.props;
+            console.log(event);
+
+            const newText = this.state.text.trim();
+            if (newText.length && newText !== text) {
+                this.props.updateTask(id, newText, urgency, isCompleted);
+            }
+
+            this.stopEditing();
+        }
+    };
+
+    stopEditing = () => {
+        this.setState({editing: false});
+    };
+    renderTitle = () => {
+        return (
+            <div className="task-item__title" tabIndex="0">
+                {this.props.text}
+            </div>
+        );
+    };
+    handleChange = event => {
+        this.setState({[event.target.name]: event.target.value});
+    };
+    renderTitleInput = () => {
+        return (
+            <div>
+                <input
+                    autoComplete="off"
+                    autoFocus
+                    className="task-item__input"
+                    defaultValue={this.props.text}
+                    maxLength="64"
+                    onKeyUp={this.handleKeyUp}
+                    type="text"
+                    name='text'
+                    onChange={this.handleChange}
+                />
+                <FormControl style={{display: 'flex'}}>
+                    <InputLabel htmlFor="age-native-simple">Urgency</InputLabel>
+                    <Select
+                        native
+                        name='urgency'
+                        value={this.state.urgency}
+                        onChange={this.handleChange}
+                        inputProps={{
+                            name: 'age',
+                            id: 'age-native-simple',
+                        }}
+                    >
+                        <option value={1}>1</option>
+                        <option value={2}>2</option>
+                        <option value={3}>3</option>
+                        <option value={4}>4</option>
+                        <option value={5}>5</option>
+                    </Select>
+                </FormControl>
+            </div>
+        )
+            ;
     };
 
     render() {
-        const {removeTask} = this.props;
-        console.log(this.props);
 
         let URGENCY = {
-            1 : 'primary',
+            1: 'primary',
             2: 'secondary',
-            3 : 'success',
-            4 : 'warning',
-            5 : 'alert'
+            3: 'success',
+            4: 'warning',
+            5: 'alert'
         };
         let color = URGENCY[this.props.urgency];
+        const {editing} = this.state;
+
         return (
             <li className={classNames({
                 isCompleted: this.props.isCompleted,
@@ -58,23 +122,36 @@ class TodoItem extends React.Component {
                         className="toggle"
                         type="checkbox"
                         checked={this.props.isCompleted}
-                        onChange={this.props.onToggle}
+                        onChange={this.toggleStatus}
                     />
                     <label onDoubleClick={this.handleEdit}>
-                        {this.props.text}
+                        {editing ? this.renderTitleInput() : this.renderTitle()}
                     </label>
-                    <Badge color={color}>{this.props.urgency}</Badge>
-
-                    <button className="destroy" onClick={this.handleRemove}
-                    ></button>
+                    <Badge className={classNames({'hide': editing})} color={color}>{this.props.urgency}</Badge>
+                    <div className="edit-btn-group">
+                        <Button
+                            className={classNames('btn--icon', {'hide': editing})}
+                            onClick={this.handleEdit}>
+                            <Edit/>
+                        </Button>
+                        <Button
+                            className={classNames('btn--icon', {'hide': !editing})}
+                            onClick={this.handleSave}
+                        >
+                            <Done/>
+                        </Button>
+                        <Button
+                            className={classNames('btn--icon', {'hide': !editing})}
+                            onClick={this.stopEditing}>
+                            <Close/>
+                        </Button>
+                        <Button
+                            className={classNames('btn--icon', {'hide': editing})}
+                            onClick={this.handleRemove}>
+                            <Close/>
+                        </Button>
+                    </div>
                 </div>
-                <input
-                    ref="editField"
-                    className="edit"
-                    value={this.state.editText}
-                    onBlur={this.handleSubmit}
-                    onChange={this.handleChange}
-                />
             </li>
         );
     }

@@ -1,4 +1,4 @@
-import {createTodo, getAllTodos, removeTodo} from '../util/todotask';
+import {createTodo, getAllTodos, removeTodo, updateTodo} from '../util/todotask';
 import {push} from 'react-router-redux';
 import {wait} from "./session";
 
@@ -14,21 +14,27 @@ export const UPDATE_TASK_SUCCESS = 'UPDATE_TASK_SUCCESS';
 export const fetchSuccess = (todos) => {
     return {
         type: FETCH_TODOS_SUCCESS,
-        todos
+        payload: todos
     };
 };
 
 export const createSuccess = (todo) => {
     return {
         type: CREATE_TASK_SUCCESS,
-        todo
+        payload: todo
     };
 };
 
-export const removeSuccess = (todo) => {
+export const removeSuccess = (_id) => {
     return {
         type: REMOVE_TASK_SUCCESS,
-        todo
+        payload: _id
+    };
+};
+export const updateSuccess = (todo) => {
+    return {
+        type: UPDATE_TASK_SUCCESS,
+        payload: todo
     };
 };
 
@@ -50,8 +56,6 @@ export const fetch = () => {
 };
 
 export const create = (todo) => {
-    console.log(todo);
-
     return (dispatch) => {
         return createTodo(todo)
             .then((response) => {
@@ -64,13 +68,25 @@ export const create = (todo) => {
 };
 
 export const remove = (_id) => {
-    console.log(_id);
     return (dispatch) => {
         dispatch(wait());
 
         return removeTodo(_id)
             .then(() => {
                 dispatch(removeSuccess(_id));
+            })
+            .catch(() => {
+                dispatch(push('/internal-server-error'));
+            });
+    };
+};
+export const update = (todo) => {
+    return (dispatch) => {
+        dispatch(wait());
+
+        return updateTodo(todo)
+            .then(() => {
+                dispatch(updateSuccess(todo));
             })
             .catch(() => {
                 dispatch(push('/internal-server-error'));

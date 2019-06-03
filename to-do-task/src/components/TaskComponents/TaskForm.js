@@ -1,7 +1,41 @@
 import React, {Component} from 'react';
 import {Button, Colors} from 'react-foundation';
 import {Field, reduxForm} from 'redux-form';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
+
+
+const newField = ({
+                      input,
+                      type,
+                      placeholder,
+                      id,
+                      meta: { touched, error },
+                      ...rest
+                  }) => {
+    return (
+        <div>
+            <input {...input} placeholder={placeholder} type={type} id={id} />
+            {touched && error && <p style={{ color: 'red' }}>{error}</p>}
+        </div>
+    );
+};
+
+
+const myValidator = values => {
+    const errors = {};
+    if (!values.urgency) {
+        errors.urgency = 'Urgency is required';
+    }
+    if (!values.text) {
+        errors.text = 'Hold on a minute, we need a task to do!';
+    } else if (!/(.+)@(.+){2,}\.(.+){2,}/i.test(values.email)) {
+        // use a more robust RegEx in real-life scenarios
+        errors.email = 'Valid email please!';
+    }
+    return errors;
+};
 
 export class TaskForm extends Component {
 
@@ -25,17 +59,11 @@ export class TaskForm extends Component {
         reset();
     };
 
-    clearInput() {
-        this.setState({text: ''});
-    }
-
     onSubmit(values) {
-/*
         const {reset} = this.props;
-*/
         this.props.handleAddTodo(values.text, values.urgency, values.isCompleted);
-        /*        reset();
-                this.setState({isAdding: false});*/
+/*        reset();
+        this.setState({isAdding: false});*/
     };
 
     render() {
@@ -55,9 +83,10 @@ export class TaskForm extends Component {
                 <Button
                     onClick={this.handleClick}
                     className="add-btn"
-                    color={Colors.SUCCESS}
                 >
-                    Add Skill
+                    <Fab aria-label='Add' color='primary'>
+                        <AddIcon/>
+                    </Fab>
                 </Button>
                 }
                 {this.state.isAdding &&
@@ -67,10 +96,12 @@ export class TaskForm extends Component {
                         <div>
                             <Field
                                 name="text"
-                                component="input"
                                 type="text"
                                 placeholder="Task"
+                                validate={this.validate}
+                                component={newField}
                             />
+
                         </div>
                     </div>
                     <div>
@@ -99,7 +130,7 @@ export class TaskForm extends Component {
                     <div>
                         <label>Urgency Level</label>
                         <div>
-                            <Field name="urgency" component="select">
+                            <Field name="urgency" component="select" validate={this.validate}>
                                 <option/>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -134,14 +165,7 @@ export class TaskForm extends Component {
     }
 }
 
-
-function validate(values, props) {
-    const errors = {};
-
-    return errors;
-}
-
 export default reduxForm({
-    validate,
+    validate: myValidator,
     form: 'AddNewForm',
 })(TaskForm);

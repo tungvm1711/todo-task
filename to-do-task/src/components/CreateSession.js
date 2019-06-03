@@ -37,12 +37,6 @@ const useStyles = makeStyles(theme => ({
 export default function SignIn(props) {
     const classes = useStyles();
     const [name, setName] = useState('');
-    const setSessionName = event =>
-        setName({
-            ...name,
-            [event.target.name]: event.target.value
-        });
-
     const handleClick = useCallback(() => {
         props.initSession(name);
     });
@@ -56,7 +50,7 @@ export default function SignIn(props) {
                 <Typography component="h1" variant="h5">
                     Create New Session
                 </Typography>
-                <form className={classes.form} noValidate>
+                <form className={classes.form}>
                     <TextField
                         variant="outlined"
                         margin="normal"

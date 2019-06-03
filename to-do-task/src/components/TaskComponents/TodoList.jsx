@@ -1,8 +1,9 @@
 import React from 'react';
-import TodoItem from './TodoItem';
 import 'lodash';
 import _ from 'lodash';
-import {ClipLoader} from "react-spinners";
+import TodoItem from './TodoItem';
+import FlipMove from 'react-flip-move';
+
 
 class TodoList extends React.Component {
 
@@ -17,48 +18,26 @@ class TodoList extends React.Component {
     }
 
     renderList() {
-        if (this.props.todosData === undefined) {
-            this.props.handleFetch();
-            console.log(this.props.todosData);
-            return (
-                <div className='sweet-loading'>
-                    <ClipLoader
-                        sizeUnit={"px"}
-                        size={150}
-                        color={'#123abc'}
-                        loading={this.props.todosData === undefined}
-                    />
-                </div>
-            )
-        }
+
         let all = this.props.todosData;
         let active = _.filter(this.props.todosData, ['isCompleted', false]);
         let completed = _.filter(this.props.todosData, ['isCompleted', true]);
         let todosData = all;
-
+        console.log(Object.keys(active).length);
         if (!this.props.active && !this.props.completed) todosData = all;
         else if (this.props.active) todosData = active;
         else if (this.props.completed) todosData = completed;
-
         return Object.keys(todosData).map((key, index) => {
             return (
-                <div>
-                    <section className="main">
-                        <label
-                            htmlFor="toggle-all"
-                        />
-                        <ul className="todo-list">
-                            <TodoItem
-                                id={todosData[key].id}
-                                key={todosData[key].id}
-                                removeTask={this.props.removeTask}
-                                text={todosData[key].text}
-                                urgency={todosData[key].urgency}
-                                isCompleted={todosData[key].isCompleted}
-                            />
-                        </ul>
-                    </section>
-                </div>
+                <TodoItem
+                    id={todosData[key].id}
+                    key={todosData[key].id}
+                    removeTask={this.props.removeTask}
+                    updateTask={this.props.updateTask}
+                    text={todosData[key].text}
+                    urgency={todosData[key].urgency}
+                    isCompleted={todosData[key].isCompleted}
+                />
             );
         });
     }
@@ -66,10 +45,21 @@ class TodoList extends React.Component {
     render() {
         return (
             <div>
-                <header className="header">
-                    <h1>Todo List</h1>
-                </header>
-                {this.renderList()}
+                <section className="main">
+                    <label
+                        htmlFor="toggle-all"
+                    />
+                    <ul className="todo-list">
+                        <FlipMove
+                            staggerDurationBy="30"
+                            duration={500}
+                            enterAnimation={this.state.enterLeaveAnimation}
+                            leaveAnimation={this.state.enterLeaveAnimation}
+                        >
+                        {this.renderList()}
+                        </FlipMove>
+                    </ul>
+                </section>
             </div>
         );
     }

@@ -1,14 +1,18 @@
 import React from "react";
 import {connect} from "react-redux";
-import {create, fetch, remove} from "../../server/actions/todotask";
+import {create, fetch, remove, update} from "../../server/actions/todotask";
 import TodoList from "../../components/TaskComponents/TodoList";
 import TaskForm from "../../components/TaskComponents/TaskForm";
+import Toggle from "../../components/TaskComponents/Toggle";
 import 'lodash';
+import _ from 'lodash';
+
 import {Button, ButtonGroup, Colors} from 'react-foundation';
 
 const mapDispatchToProps = dispatch => ({
     fetch: () => dispatch(fetch()),
     create: (todo) => dispatch(create(todo)),
+    updateTask: (todo) => dispatch(update(todo)),
     removeTask: (_id) => dispatch(remove(_id))
 });
 
@@ -17,25 +21,18 @@ const mapStateToProps = state => {
         todos: state.todos
     }
 };
-function getSafe(fn, defaultVal) {
-    try {
-        return fn();
-    } catch (e) {
-        return defaultVal;
-    }
-}
+
 class TodoPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             loading: true,
             fetchTodoSuccess: false,
-            todos: [],
-/*
-            todos: this.props.todos.todos.todos,
-*/
+            todos: this.props.todos.todos,
             active: false,
-            completed: false
+            completed: false,
+            order: 'asc',
+            sortingMethod: 'chronological'
         }
     };
 
@@ -53,50 +50,24 @@ class TodoPage extends React.Component {
         this.setState({active: false, completed: false});
     };
 
-    componentDidMount = () => {
+    componentWillMount = () => {
         this.props.fetch();
-        let todos = this.props.todos.todos;
-        console.log(this.props.todos);
 
-        if (todos.todos !== undefined) {
-            console.log("load duoc roi ne");
-            this.setState({todos: todos.todos});
+        if (this.props.todos.todos !== undefined) {
+            this.setState({todos: this.props.todos.todos});
         }
     };
 
-/*    static getDerivedStateFromProps(nextProps, prevState) {
-        getSafe(() => nextProps.todos.todos.todos, []);
-        console.log(nextProps.todos.todos.todos);
-        console.log(prevState.todos);
-        if (nextProps !== prevState) {
-            return console.log("ahdasdahsdaisdh");
 
-        } else return null;
-    }*/
+    componentWillReceiveProps = (nextProps) => {
+        if (typeof (nextProps.todos) !== 'undefined') {
+            if (this.state.todos !== nextProps.todos) {
+                const sortAsc = _.orderBy(nextProps.todos.todos, ['urgency'], ['asc']);
 
-        componentWillReceiveProps = (nextProps) => {
-
-            /*
-                    if (this.state.todos !== undefined && nextProps.todos.todos.todos !== undefined && nextProps.todos.todos.todos !== this.state.todos ) {
-            */
-            try {
-                if (nextProps.todos.todos.todos === 'undefined') {
-                    console.log("dietmememem");
-                }
-            } catch (err) {
-                console.log(err)
+                this.setState({todos: sortAsc});
             }
-
-            if (typeof (nextProps.todos.todos.todos) !== 'undefined') {
-                if (this.state.todos !== nextProps.todos.todos.todos) {
-
-                    console.log(nextProps.todos.todos.todos);
-                    console.log(this.state.todos);
-                    this.setState({todos: nextProps.todos.todos.todos});
-                    console.log("dietmememem");
-                }
-            }
-        };
+        }
+    };
 
     handleCreateTask = (text, urgency, complete) => {
         let isCompleted = (complete === 'True');
@@ -106,41 +77,72 @@ class TodoPage extends React.Component {
             "urgency": parseInt(urgency)
         };
         this.props.create(newTodo);
-        this.props.fetch();
-    };
-
-    handleFetchTask = (e) => {
-        this.props.fetch();
-        let todos = this.props.todos.todos;
-        console.log(this.props.todos);
-        if (todos.todos !== undefined) {
-            console.log("load duoc roi ne");
-            this.setState({todos: todos.todos});
-        }
     };
 
     handleRemoveTask = (_id) => {
         console.log("Remove Task");
         this.props.removeTask(_id);
-        this.props.fetch();
+    };
+
+    handleShuffle = () => {
+        this.setState({
+            sortingMethod: 'shuffle',
+            todos: _.shuffle(this.state.todos)
+        });
+    };
+
+    handleUpdateTask = (_id, text, urgency, complete) => {
+        console.log("Update Task");
+        let updatedTodo = {
+            "id": _id,
+            "text": text,
+            "isCompleted": complete,
+            "urgency": parseInt(urgency)
+        };
+        this.props.updateTask(updatedTodo);
+    };
+
+    toggleSort = () => {
+        const sortAsc = _.orderBy(this.state.todos, ['urgency'], ['asc']);
+        const sortDesc = _.orderBy(this.state.todos, ['urgency'], ['desc']);
+
+        this.setState({
+            order: (this.state.order === 'asc' ? 'desc' : 'asc'),
+            sortingMethod: 'chronological',
+            todos: this.state.order === 'asc' ? sortDesc : sortAsc
+
+        });
     };
 
     render() {
+
         let todosData = this.state.todos;
-        let status = this.state.status;
-        console.log(this.props);
 
         return (
             <div className="g-row todopage">
+                <header className="header">
+                    <h1>Todo List</h1>
+                </header>
+                <div>
+                    <Toggle
+                        clickHandler={this.toggleSort}
+                        text={this.state.order === 'asc' ? 'Ascending' : 'Descending'}
+                        active={this.state.sortingMethod === 'chronological'}
+                    />
+                    <Toggle
+                        clickHandler={this.handleShuffle}
+                        text="Shuffle"
+                        active={this.state.sortingMethod === 'shuffle'}
+                    />
+
+                </div>
                 <div className="g-col todoapp">
                     <TodoList
                         active={this.state.active}
                         completed={this.state.completed}
                         todosData={todosData}
                         removeTask={this.handleRemoveTask}
-                        handleFetch={this.handleFetchTask}
-                        shouldFetch={status}
-
+                        updateTask={this.handleUpdateTask}
                     />
                     <div className="btnGroup-wrapper">
                         <ButtonGroup className="order-btnGroup" isExpanded>

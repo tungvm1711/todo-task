@@ -8,12 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-task/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-task/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/to-do-task/src/components/CreateSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/components/CreateSession.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TaskForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TaskForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/to-do-task/src/containers/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/containers/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-task/src/containers/TodoPage/TodoPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/containers/TodoPage/TodoPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/to-do-task/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-task/src/server/actions/todotask.js" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/server/actions/todotask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/to-do-task/src/server/reducers/root.js" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/server/reducers/root.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-task/src/server/reducers/todoreducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/server/reducers/todoreducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-task/src/server/util/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/server/util/request.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-task/src/server/util/todotask.js" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-task/src/server/util/todotask.js" afterDir="false" />
@@ -32,49 +33,42 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-do-task/src/server/actions/todotask.js">
+        <entry file="file://$PROJECT_DIR$/to-do-task/src/server/reducers/sessionreducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/to-do-task/src/components/CreateSession.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
               <folding>
-                <element signature="e#0#69#0" expanded="true" />
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-do-task/src/server/reducers/root.js">
+        <entry file="file://$PROJECT_DIR$/to-do-task/src/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#120#170#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-315">
+              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-do-task/src/server/reducers/todoreducer.js">
+        <entry file="file://$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoItem.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-do-task/src/containers/TodoPage/TodoPage.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+            <state relative-caret-position="842">
+              <caret line="153" column="22" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#900#989#0" />
-                <element signature="e#1019#1108#0" />
-                <element signature="e#1132#1197#0" />
               </folding>
             </state>
           </provider>
@@ -83,34 +77,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="592">
+              <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoItem.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-do-task/src/containers/Header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="115" column="48" selection-start-line="115" selection-start-column="48" selection-end-line="115" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,10 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>UnauthorizedError</find>
-      <find>App.css</find>
-      <find>.babelrc</find>
-      <find>sessionID</find>
       <find>setS</find>
       <find>ENTER_KEY</find>
       <find>clearCompleted</find>
@@ -150,13 +116,17 @@
       <find>filterType</find>
       <find>fetchTodoSuccess</find>
       <find>sessi</find>
-      <find>button</find>
       <find>.order-btnGroup</find>
       <find>.todo-list li.completed label</find>
       <find>.todo-list li label</find>
-      <find>handleFetchTask</find>
       <find>labelW</find>
       <find>age</find>
+      <find>removeTask</find>
+      <find>handleFetchTask</find>
+      <find>save</find>
+      <find>todoapp</find>
+      <find>new</find>
+      <find>button</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/to-do-task</dir>
@@ -198,23 +168,25 @@
         <option value="$PROJECT_DIR$/to-do-task/src/components/TaskForm.js" />
         <option value="$PROJECT_DIR$/to-do-task/src/server/actions/session.js" />
         <option value="$PROJECT_DIR$/to-do-task/src/components/TodoList.jsx" />
-        <option value="$PROJECT_DIR$/to-do-task/src/index.js" />
-        <option value="$PROJECT_DIR$/to-do-task/src/index.css" />
         <option value="$PROJECT_DIR$/to-do-task/src/components/TodoItem.jsx" />
         <option value="$PROJECT_DIR$/to-do-task/src/containers/LoginPage/LoginPage.js" />
         <option value="$PROJECT_DIR$/to-do-task/src/containers/Layout.js" />
-        <option value="$PROJECT_DIR$/to-do-task/src/components/CreateSession.js" />
         <option value="$PROJECT_DIR$/to-do-task/src/server/util/session.js" />
         <option value="$PROJECT_DIR$/to-do-task/src/containers/Footer.js" />
         <option value="$PROJECT_DIR$/to-do-task/src/containers/App.js" />
         <option value="$PROJECT_DIR$/to-do-task/src/containers/Header.js" />
-        <option value="$PROJECT_DIR$/to-do-task/src/server/util/todotask.js" />
-        <option value="$PROJECT_DIR$/to-do-task/src/server/util/request.js" />
-        <option value="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoItem.jsx" />
-        <option value="$PROJECT_DIR$/to-do-task/src/server/actions/todotask.js" />
         <option value="$PROJECT_DIR$/to-do-task/src/server/reducers/root.js" />
+        <option value="$PROJECT_DIR$/to-do-task/src/server/util/request.js" />
+        <option value="$PROJECT_DIR$/to-do-task/src/server/actions/todotask.js" />
+        <option value="$PROJECT_DIR$/to-do-task/src/server/util/todotask.js" />
+        <option value="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoItem.jsx" />
         <option value="$PROJECT_DIR$/to-do-task/src/server/reducers/todoreducer.js" />
+        <option value="$PROJECT_DIR$/to-do-task/src/index.js" />
+        <option value="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/Toggle.js" />
         <option value="$PROJECT_DIR$/to-do-task/src/containers/TodoPage/TodoPage.jsx" />
+        <option value="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TaskForm.js" />
+        <option value="$PROJECT_DIR$/to-do-task/src/components/CreateSession.js" />
+        <option value="$PROJECT_DIR$/to-do-task/src/index.css" />
         <option value="$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoList.jsx" />
       </list>
     </option>
@@ -222,7 +194,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
     <option name="y" value="25" />
-    <option name="width" value="927" />
+    <option name="width" value="1853" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -231,7 +203,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,6 +241,21 @@
               <item name="TodoTask" type="462c0819:PsiDirectoryNode" />
               <item name="to-do-task" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TodoTask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TodoTask" type="462c0819:PsiDirectoryNode" />
+              <item name="to-do-task" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="TodoPage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TodoTask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TodoTask" type="462c0819:PsiDirectoryNode" />
+              <item name="to-do-task" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -300,12 +286,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../English" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todo-react-redux-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -352,12 +339,15 @@
       <workItem from="1558895432831" duration="48332000" />
       <workItem from="1559075088697" duration="602000" />
       <workItem from="1559124389569" duration="1165000" />
-      <workItem from="1559132051268" duration="15678000" />
+      <workItem from="1559132051268" duration="31140000" />
+      <workItem from="1559247257881" duration="10050000" />
+      <workItem from="1559394962328" duration="572000" />
+      <workItem from="1559395568635" duration="10295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136730000" />
+    <option name="totallyTimeSpent" value="173109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -387,16 +377,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/App.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/server/util/route.js" />
     <entry file="file://$PROJECT_DIR$/to-do-task/src/server/util/config/hostApi.js" />
     <entry file="file://$PROJECT_DIR$/to-do-task/src/components/Session/InitSession.js" />
     <entry file="file://$PROJECT_DIR$/to-do-task/src/containers/WelcomePage/App.css" />
@@ -510,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="257" lean-forward="true" selection-start-line="257" selection-end-line="257" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/to-do-task/node_modules/@material-ui/icons/LockOutlined.d.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -556,13 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/server/reducers/sessionreducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -623,13 +589,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/components/CreateSession.js">
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/server/actions/session.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/server/util/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -643,68 +613,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/server/actions/session.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TaskForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/server/util/request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoItem.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/to-do-task/src/server/util/todotask.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
+        <state relative-caret-position="315">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/to-do-task/src/server/actions/todotask.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="1020">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
           <folding>
-            <element signature="e#0#69#0" expanded="true" />
+            <element signature="e#0#81#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/server/reducers/todoreducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -719,23 +641,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-do-task/src/containers/TodoPage/TodoPage.jsx">
+    <entry file="file://$PROJECT_DIR$/to-do-task/node_modules/react-foundation/src/components/icon.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#900#989#0" />
-            <element signature="e#1019#1108#0" />
-            <element signature="e#1132#1197#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/server/reducers/todoreducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TaskForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="64" column="2" selection-start-line="64" selection-end-line="65" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/components/TaskComponents/Toggle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/containers/TodoPage/TodoPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/server/reducers/sessionreducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/components/CreateSession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoItem.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="842">
+          <caret line="153" column="22" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/to-do-task/src/components/TaskComponents/TodoList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="592">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

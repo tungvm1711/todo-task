@@ -14,7 +14,7 @@ const request = async (config = {}) => {
             raxConfig: {
                 // Retry 5 times on requests that return a response (500, etc) before giving up.
                 retry: 5,
-                retryDelay: 0,
+                retryDelay: 10,
                 // Retry twice on errors that don't return a response (ENOTFOUND, ETIMEDOUT, etc).
                 noResponseRetries: 2,
 
