@@ -8,7 +8,6 @@ export const initSession = () => {
 export const alterSession = () => {
     let sessionId = localStorage.getItem('Auth');
 
-    console.log(sessionId);
     return request({
         method: 'patch', url: `/session/`, headers: {
             'Content-Type': 'application/json',
@@ -19,8 +18,6 @@ export const alterSession = () => {
 
 export const removeSession = () => {
     let sessionId = localStorage.getItem('Auth');
-    console.log(sessionId);
-    console.log(localStorage.getItem('Auth'));
     return request({
         method: 'delete', url: `/session/`, headers: {
             'Content-Type': 'application/json',

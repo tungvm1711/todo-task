@@ -38,8 +38,6 @@ class TodoItem extends React.Component {
     handleSave = (event) => {
         if (this.state.editing) {
             const {id, text, urgency, isCompleted} = this.props;
-            console.log(event);
-
             const newText = this.state.text.trim();
             if (newText.length && newText !== text) {
                 this.props.updateTask(id, newText, urgency, isCompleted);

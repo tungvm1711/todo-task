@@ -63,8 +63,6 @@ function ButtonAppBar(props) {
     const handleAlterSession = useCallback((e) => {
         setFailureRate(e.target.value);
         props.alterSession(failureRate);
-
-        console.log(props);
     });
 
     return (

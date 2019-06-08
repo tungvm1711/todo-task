@@ -11,7 +11,6 @@ import * as serviceWorker from './serviceWorker';
 const renderApp = preloadedState => {
     const store = configureStore(preloadedState);
     if (localStorage.Auth) {
-        console.log('first dispatch');
         store.dispatch({type: 'INIT_SESSION_SUCCESS', session: localStorage.Auth});
     }
     ReactDOM.render(

@@ -45,8 +45,6 @@ export const fetch = () => {
 
         return getAllTodos()
             .then((data) => {
-                console.log(sessionId);
-
                 dispatch(fetchSuccess(data));
             })
             .catch(() => {

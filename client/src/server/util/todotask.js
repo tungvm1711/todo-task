@@ -29,7 +29,6 @@ export const updateTodo = (todo) => {
 };
 
 export const createTodo = (todo) => {
-    console.log(todo);
     let sessionId = localStorage.getItem('Auth');
     return request({
         method: 'post',

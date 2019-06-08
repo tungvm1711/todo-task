@@ -23,7 +23,6 @@ class TodoList extends React.Component {
         let active = _.filter(this.props.todosData, ['isCompleted', false]);
         let completed = _.filter(this.props.todosData, ['isCompleted', true]);
         let todosData = all;
-        console.log(Object.keys(active).length);
         if (!this.props.active && !this.props.completed) todosData = all;
         else if (this.props.active) todosData = active;
         else if (this.props.completed) todosData = completed;

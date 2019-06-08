@@ -18,15 +18,10 @@ class App extends React.Component {
     render(): React.Element<any> {
         const {...rest} = this.props;
         let isAuth = this.props.isAuth;
-        console.log("hihi main");
-        console.log(isAuth);
         return (
             <div className="content-wrapper">
                 <Switch>
                     <RequireAuthRoute authenticated={isAuth} exact path="/" component={TodoPage}/>
-{/*
-                    <RequireAuthRoute authenticated={isAuth} path="/todos" component={TodoPage}/>
-*/}
                     <RequireUnauthRoute authenticated={isAuth} exact path="/new-session" component={LoginPage}/>
                 </Switch>
             </div>

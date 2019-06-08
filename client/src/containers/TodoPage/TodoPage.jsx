@@ -80,7 +80,6 @@ class TodoPage extends React.Component {
     };
 
     handleRemoveTask = (_id) => {
-        console.log("Remove Task");
         this.props.removeTask(_id);
     };
 
@@ -92,7 +91,6 @@ class TodoPage extends React.Component {
     };
 
     handleUpdateTask = (_id, text, urgency, complete) => {
-        console.log("Update Task");
         let updatedTodo = {
             "id": _id,
             "text": text,
